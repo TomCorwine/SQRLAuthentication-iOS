@@ -7,6 +7,8 @@
 
 #import "SQRLMotion.h"
 
+#import "Categories.h"
+
 #import <CoreMotion/CoreMotion.h>
 
 #define kMotionThreshold		0.5
@@ -51,8 +53,7 @@
 							rotation.x, rotation.y, rotation.z,
 							gravity.x, gravity.y, gravity.z,
 							attitude.roll, attitude.pitch, attitude.yaw];
-		NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
-		[self.mutableData appendData:data];
+		[self.mutableData appendData:string.data];
 	}];
 
 	return self;

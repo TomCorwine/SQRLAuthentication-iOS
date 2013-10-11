@@ -7,10 +7,7 @@
 
 #import <XCTest/XCTest.h>
 
-#import "NSData+Random.h"
-#import "NSData+XOR.h"
-#import "NSData+Hash.h"
-#import "NSString+Hash.h"
+#import "Categories.h"
 
 @interface SQRLAuthenticationCategoryTests : XCTestCase
 @end
@@ -53,8 +50,7 @@
 
 - (void)testSHA256String
 {
-	NSString *string = @"This string needs to be hashed.";
-	NSString *hashedOutput = string.sha256String;
+	NSString *hashedOutput = @"This string needs to be hashed.".sha256String;
 	XCTAssertTrue([hashedOutput isEqualToString:
 	@"1e7fbab426d2f180a703b350b417a218efbc9a4b576890d6e349d594d474cff7"],
 	@"SHA256 string hash function did not produce expected output.");
@@ -62,8 +58,7 @@
 
 - (void)testSHA512String
 {
-	NSString *string = @"This string needs to be hashed.";
-	NSString *hashedOutput = string.sha512String;
+	NSString *hashedOutput = @"This string needs to be hashed.".sha512String;
 	XCTAssertTrue([hashedOutput isEqualToString:
 	@"601ac9cb5d2dd8612298502f8b350247f4c85894c48c791b26e540aa171246039a8b0a2b9e8b8335a5d948c25dc0a57e9a4091d261eb384f0ca22ed64317d61e"],
 	@"SHA512 string hash function did not produce expected output.");
@@ -71,8 +66,7 @@
 
 - (void)testSHA256Data
 {
-	NSData *data = [@"This string needs to be hashed." dataUsingEncoding:NSUTF8StringEncoding];
-	NSString *hashedOutput = data.sha256String;
+	NSString *hashedOutput = @"This string needs to be hashed.".data.sha256String;
 	XCTAssertTrue([hashedOutput isEqualToString:
 	@"1e7fbab426d2f180a703b350b417a218efbc9a4b576890d6e349d594d474cff7"],
 	@"SHA256 data hash function did not produce expected output.");
@@ -80,8 +74,7 @@
 
 - (void)testSHA512Data
 {
-	NSData *data = [@"This string needs to be hashed." dataUsingEncoding:NSUTF8StringEncoding];
-	NSString *hashedOutput = data.sha512String;
+	NSString *hashedOutput = @"This string needs to be hashed.".data.sha512String;
 	XCTAssertTrue([hashedOutput isEqualToString:
 	@"601ac9cb5d2dd8612298502f8b350247f4c85894c48c791b26e540aa171246039a8b0a2b9e8b8335a5d948c25dc0a57e9a4091d261eb384f0ca22ed64317d61e"],
 	@"SHA512 data hash function did not produce expected output.");

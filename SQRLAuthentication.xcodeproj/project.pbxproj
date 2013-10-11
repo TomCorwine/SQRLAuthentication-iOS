@@ -22,6 +22,8 @@
 		F19784FD1806525100F7580A /* SQRLAuthenticationCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED7018064C1500706858 /* SQRLAuthenticationCategoryTests.m */; };
 		F1978530180653D600F7580A /* libSQRLAuthentication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A340EA1803457C0013CB31 /* libSQRLAuthentication.a */; };
 		F197853618076E7F00F7580A /* NSData+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = F197853518076E7F00F7580A /* NSData+Hash.m */; };
+		F197853A1807BE8B00F7580A /* NSData+Convert.m in Sources */ = {isa = PBXBuildFile; fileRef = F19785391807BE8B00F7580A /* NSData+Convert.m */; };
+		F197853D1807BF2700F7580A /* NSString+Convert.m in Sources */ = {isa = PBXBuildFile; fileRef = F197853C1807BF2700F7580A /* NSString+Convert.m */; };
 		F1A340EE1803457C0013CB31 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A340ED1803457C0013CB31 /* Foundation.framework */; };
 		F1A340FD1803457C0013CB31 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A340ED1803457C0013CB31 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -76,6 +78,11 @@
 		F19784EF18064D9200F7580A /* SQRLAuthenticationTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "SQRLAuthenticationTests-Info.plist"; path = "SQRLAuthenticationTests/SQRLAuthenticationTests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F197853418076E7F00F7580A /* NSData+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Hash.h"; sourceTree = "<group>"; };
 		F197853518076E7F00F7580A /* NSData+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Hash.m"; sourceTree = "<group>"; };
+		F19785381807BE8B00F7580A /* NSData+Convert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Convert.h"; sourceTree = "<group>"; };
+		F19785391807BE8B00F7580A /* NSData+Convert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Convert.m"; sourceTree = "<group>"; };
+		F197853B1807BF2700F7580A /* NSString+Convert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Convert.h"; sourceTree = "<group>"; };
+		F197853C1807BF2700F7580A /* NSString+Convert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Convert.m"; sourceTree = "<group>"; };
+		F197853E1807BF7900F7580A /* Categories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Categories.h; sourceTree = "<group>"; };
 		F1A340EA1803457C0013CB31 /* libSQRLAuthentication.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSQRLAuthentication.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A340ED1803457C0013CB31 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F1A340FA1803457C0013CB31 /* SQRLAuthenticationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SQRLAuthenticationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +114,7 @@
 		F154ED4A18064BF300706858 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				F197853E1807BF7900F7580A /* Categories.h */,
 				F154ED4B18064BF300706858 /* NSData+Random.h */,
 				F154ED4C18064BF300706858 /* NSData+Random.m */,
 				F154ED4D18064BF300706858 /* NSData+Scrypt.h */,
@@ -115,8 +123,12 @@
 				F154ED5018064BF300706858 /* NSData+XOR.m */,
 				F197853418076E7F00F7580A /* NSData+Hash.h */,
 				F197853518076E7F00F7580A /* NSData+Hash.m */,
+				F19785381807BE8B00F7580A /* NSData+Convert.h */,
+				F19785391807BE8B00F7580A /* NSData+Convert.m */,
 				F154ED5118064BF300706858 /* NSString+Hash.h */,
 				F154ED5218064BF300706858 /* NSString+Hash.m */,
+				F197853B1807BF2700F7580A /* NSString+Convert.h */,
+				F197853C1807BF2700F7580A /* NSString+Convert.m */,
 			);
 			name = Categories;
 			path = SQRLAuthentication/Categories;
@@ -308,6 +320,7 @@
 			files = (
 				F19784F21806524800F7580A /* NSData+Random.m in Sources */,
 				F19784F31806524800F7580A /* NSData+Scrypt.m in Sources */,
+				F197853A1807BE8B00F7580A /* NSData+Convert.m in Sources */,
 				F19784F41806524800F7580A /* NSData+XOR.m in Sources */,
 				F19784F51806524800F7580A /* NSString+Hash.m in Sources */,
 				F19784F61806524800F7580A /* PDKeychainBindings.m in Sources */,
@@ -316,6 +329,7 @@
 				F19784F91806524800F7580A /* SQRLCamera.m in Sources */,
 				F19784FA1806524800F7580A /* SQRLMotion.m in Sources */,
 				F19784FB1806524800F7580A /* SQRLSecretKey.m in Sources */,
+				F197853D1807BF2700F7580A /* NSString+Convert.m in Sources */,
 				F197853618076E7F00F7580A /* NSData+Hash.m in Sources */,
 				F19784FC1806524800F7580A /* SQRLAuthentication.m in Sources */,
 			);

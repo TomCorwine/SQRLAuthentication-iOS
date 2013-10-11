@@ -9,11 +9,7 @@
 
 #import "PDKeychainBindings.h"
 
-#import "NSString+Hash.h"
-#import "NSData+XOR.h"
-#import "NSData+Random.h"
-#import "NSData+Hash.h"
-#import "NSData+Scrypt.h"
+#import "Categories.h"
 
 #define kNumberOfKeyGeneratingSecondsRequired	5
 #define kSecretKeyStorageKey					@"SecretKeyStorageKey"
@@ -22,7 +18,7 @@
 @property (strong) NSTimer *generationTimer;
 @property (strong) NSData *passwordHash;
 @property (strong) NSMutableString *mutableString;
-@property (strong) SQLSecretKeyUpdateBlock updateBlock;
+@property (strong) SQRLSecretKeyUpdateBlock updateBlock;
 @property (getter = isNewDataAvailable) BOOL newDataAvailable;
 @property NSTimeInterval elapsedSecondsOfCollectingData;
 @end
@@ -41,14 +37,14 @@
 }
 */
 
-- (void)beginGeneratingSecretKeyWithPassword:(NSString *)password computeDuration:(NSTimeInterval)seconds updateBlock:(SQLSecretKeyUpdateBlock)updateBlock
+- (void)beginGeneratingSecretKeyWithPassword:(NSString *)password computeDuration:(NSTimeInterval)seconds updateBlock:(SQRLSecretKeyUpdateBlock)updateBlock
 {
 	//NSAssert(self.passwordHash, @"-[%1$@ createPassword:computeDuration:updateBlock:] must be called before calling -[%1$@ beginGeneratingSecretKeyWithUpdateBlock:]", NSStringFromClass([self class]));
 
 	self.generationTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(generationTimerDidFire:) userInfo:nil repeats:YES];
 
 	self.updateBlock = updateBlock;
-	self.mutableString = [[NSMutableString alloc] init];
+	self.mutableString = @"".mutableCopy;
 
 	if (self.updateBlock)
 		self.updateBlock(0, NO);
@@ -71,10 +67,10 @@
 
 	if (self.elapsedSecondsOfCollectingData > kNumberOfKeyGeneratingSecondsRequired) // We're done
 	{
-		data = [self.mutableString.sha256String dataUsingEncoding:NSUTF8StringEncoding];
-		NSData *randomData = [NSData randomDataWithLength:data.length]; // Add random data from system
-		data = [data dataXORdWithData:randomData];
-		self.secretKey = data;
+		NSData *finalData = self.mutableString.sha256String.data;
+		NSData *randomData = [NSData randomDataWithLength:finalData.length]; // Add random data from system
+		finalData = [finalData dataXORdWithData:randomData];
+		self.secretKey = finalData;
 
 		self.mutableString = nil;
 		self.generationTimer = nil;
@@ -96,33 +92,38 @@
 	self.updateBlock = nil;
 }
 
-- (NSData *)privateKeyForDomain:(NSString *)domain password:(NSString *)password
+- (void)privateKeyForDomain:(NSString *)domain password:(NSString *)password completionBlock:(SQRLSecretKeyCompletionBlock)completionBlock
 {
-	NSData *secretKey = [self secretKeyWithPassword:password];
-	//NSString *secretKeyString = [[NSString alloc] initWithData: encoding:NSUTF8StringEncoding];
-	//NSString *privateKeyString = [domain hmacSHA256StringWithKey:secretKeyString];
-	return nil ;//[privateKeyString dataUsingEncoding:NSUTF8StringEncoding];
+	[self secretKeyWithPassword:password completionBlock:^(NSData *secretKey) {
+		//NSString *secretKeyString = [[NSString alloc] initWithData: encoding:NSUTF8StringEncoding];
+		//NSString *privateKeyString = [domain hmacSHA256StringWithKey:secretKeyString];
+		//[privateKeyString dataUsingEncoding:NSUTF8StringEncoding];
+		if (completionBlock)
+			completionBlock(nil);
+	}];
 }
 
 #pragma mark - Accessors
 
 - (BOOL)doesSecretKeyExist
 {
-	return NO; //(nil != self.secretKey);
+	return (nil != [[PDKeychainBindings sharedKeychainBindings] objectForKey:kSecretKeyStorageKey]);
 }
 
 #pragma mark - Helpers
 
-- (void)setSecretKey:(NSData *)secretKey
+- (void)setSecretKey:(NSData *)secretKeyData
 {
-	NSString *string = [[NSString alloc] initWithData:secretKey encoding:NSUTF8StringEncoding];
-	[[PDKeychainBindings sharedKeychainBindings] setString:string forKey:kSecretKeyStorageKey];
+	[[PDKeychainBindings sharedKeychainBindings] setString:secretKeyData.newString forKey:kSecretKeyStorageKey];
 }
 
-- (NSData *)secretKeyWithPassword:(NSString *)password
+- (void)secretKeyWithPassword:(NSString *)password completionBlock:(SQRLSecretKeyCompletionBlock)completionBlock
 {
-	NSString *secretKeyString = [[PDKeychainBindings sharedKeychainBindings] objectForKey:kSecretKeyStorageKey];
-	return [secretKeyString dataUsingEncoding:NSUTF8StringEncoding];
+	NSString *secretKeyString = [[PDKeychainBindings sharedKeychainBindings] objectForKey:kSecretKeyStorageKey];;
+	[secretKeyString.data scryptPBKDF2WithKey:password.data duration:0.5 completionBlock:^(NSData *data, int rounds) {
+		if (completionBlock)
+			completionBlock(data);
+	}];
 }
 
 - (void)generationTimerDidFire:(NSTimer *)timer
