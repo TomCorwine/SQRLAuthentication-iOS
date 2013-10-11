@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F154ED6418064BF300706858 /* NSData+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED4C18064BF300706858 /* NSData+Random.m */; };
-		F154ED6518064BF300706858 /* NSData+Scrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED4E18064BF300706858 /* NSData+Scrypt.m */; };
-		F154ED6618064BF300706858 /* NSData+XOR.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED5018064BF300706858 /* NSData+XOR.m */; };
-		F154ED6718064BF300706858 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED5218064BF300706858 /* NSString+Hash.m */; };
-		F154ED6818064BF300706858 /* PDKeychainBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED5618064BF300706858 /* PDKeychainBindings.m */; };
-		F154ED6918064BF300706858 /* PDKeychainBindingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED5818064BF300706858 /* PDKeychainBindingsController.m */; };
-		F154ED6A18064BF300706858 /* SQRLAuthenticate.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED5B18064BF300706858 /* SQRLAuthenticate.m */; };
-		F154ED6B18064BF300706858 /* SQRLCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED5D18064BF300706858 /* SQRLCamera.m */; };
-		F154ED6C18064BF300706858 /* SQRLMotion.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED5F18064BF300706858 /* SQRLMotion.m */; };
-		F154ED6D18064BF300706858 /* SQRLSecretKey.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED6118064BF300706858 /* SQRLSecretKey.m */; };
-		F154ED6E18064BF300706858 /* SQRLAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED6318064BF300706858 /* SQRLAuthentication.m */; };
 		F19784F018064E4400F7580A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A340FB1803457C0013CB31 /* XCTest.framework */; };
-		F19784F118064EA800F7580A /* SQRLAuthenticationCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED7018064C1500706858 /* SQRLAuthenticationCategoryTests.m */; };
+		F19784F21806524800F7580A /* NSData+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED4C18064BF300706858 /* NSData+Random.m */; };
+		F19784F31806524800F7580A /* NSData+Scrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED4E18064BF300706858 /* NSData+Scrypt.m */; };
+		F19784F41806524800F7580A /* NSData+XOR.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED5018064BF300706858 /* NSData+XOR.m */; };
+		F19784F51806524800F7580A /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED5218064BF300706858 /* NSString+Hash.m */; };
+		F19784F61806524800F7580A /* PDKeychainBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED5618064BF300706858 /* PDKeychainBindings.m */; };
+		F19784F71806524800F7580A /* PDKeychainBindingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED5818064BF300706858 /* PDKeychainBindingsController.m */; };
+		F19784F81806524800F7580A /* SQRLAuthenticate.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED5B18064BF300706858 /* SQRLAuthenticate.m */; };
+		F19784F91806524800F7580A /* SQRLCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED5D18064BF300706858 /* SQRLCamera.m */; };
+		F19784FA1806524800F7580A /* SQRLMotion.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED5F18064BF300706858 /* SQRLMotion.m */; };
+		F19784FB1806524800F7580A /* SQRLSecretKey.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED6118064BF300706858 /* SQRLSecretKey.m */; };
+		F19784FC1806524800F7580A /* SQRLAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED6318064BF300706858 /* SQRLAuthentication.m */; };
+		F19784FD1806525100F7580A /* SQRLAuthenticationCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED7018064C1500706858 /* SQRLAuthenticationCategoryTests.m */; };
+		F1978530180653D600F7580A /* libSQRLAuthentication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A340EA1803457C0013CB31 /* libSQRLAuthentication.a */; };
+		F197853618076E7F00F7580A /* NSData+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = F197853518076E7F00F7580A /* NSData+Hash.m */; };
 		F1A340EE1803457C0013CB31 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A340ED1803457C0013CB31 /* Foundation.framework */; };
 		F1A340FD1803457C0013CB31 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A340ED1803457C0013CB31 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +74,8 @@
 		F154ED6F18064C0600706858 /* SQRLAuthentication-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SQRLAuthentication-Prefix.pch"; path = "SQRLAuthentication/SQRLAuthentication-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		F154ED7018064C1500706858 /* SQRLAuthenticationCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SQRLAuthenticationCategoryTests.m; path = SQRLAuthenticationTests/SQRLAuthenticationCategoryTests.m; sourceTree = SOURCE_ROOT; };
 		F19784EF18064D9200F7580A /* SQRLAuthenticationTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "SQRLAuthenticationTests-Info.plist"; path = "SQRLAuthenticationTests/SQRLAuthenticationTests-Info.plist"; sourceTree = SOURCE_ROOT; };
+		F197853418076E7F00F7580A /* NSData+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Hash.h"; sourceTree = "<group>"; };
+		F197853518076E7F00F7580A /* NSData+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Hash.m"; sourceTree = "<group>"; };
 		F1A340EA1803457C0013CB31 /* libSQRLAuthentication.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSQRLAuthentication.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A340ED1803457C0013CB31 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F1A340FA1803457C0013CB31 /* SQRLAuthenticationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SQRLAuthenticationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1978530180653D600F7580A /* libSQRLAuthentication.a in Frameworks */,
 				F19784F018064E4400F7580A /* XCTest.framework in Frameworks */,
 				F1A340FD1803457C0013CB31 /* Foundation.framework in Frameworks */,
 			);
@@ -108,6 +113,8 @@
 				F154ED4E18064BF300706858 /* NSData+Scrypt.m */,
 				F154ED4F18064BF300706858 /* NSData+XOR.h */,
 				F154ED5018064BF300706858 /* NSData+XOR.m */,
+				F197853418076E7F00F7580A /* NSData+Hash.h */,
+				F197853518076E7F00F7580A /* NSData+Hash.m */,
 				F154ED5118064BF300706858 /* NSString+Hash.h */,
 				F154ED5218064BF300706858 /* NSString+Hash.m */,
 			);
@@ -299,17 +306,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F154ED6518064BF300706858 /* NSData+Scrypt.m in Sources */,
-				F154ED6C18064BF300706858 /* SQRLMotion.m in Sources */,
-				F154ED6D18064BF300706858 /* SQRLSecretKey.m in Sources */,
-				F154ED6618064BF300706858 /* NSData+XOR.m in Sources */,
-				F154ED6B18064BF300706858 /* SQRLCamera.m in Sources */,
-				F154ED6A18064BF300706858 /* SQRLAuthenticate.m in Sources */,
-				F154ED6918064BF300706858 /* PDKeychainBindingsController.m in Sources */,
-				F154ED6E18064BF300706858 /* SQRLAuthentication.m in Sources */,
-				F154ED6418064BF300706858 /* NSData+Random.m in Sources */,
-				F154ED6818064BF300706858 /* PDKeychainBindings.m in Sources */,
-				F154ED6718064BF300706858 /* NSString+Hash.m in Sources */,
+				F19784F21806524800F7580A /* NSData+Random.m in Sources */,
+				F19784F31806524800F7580A /* NSData+Scrypt.m in Sources */,
+				F19784F41806524800F7580A /* NSData+XOR.m in Sources */,
+				F19784F51806524800F7580A /* NSString+Hash.m in Sources */,
+				F19784F61806524800F7580A /* PDKeychainBindings.m in Sources */,
+				F19784F71806524800F7580A /* PDKeychainBindingsController.m in Sources */,
+				F19784F81806524800F7580A /* SQRLAuthenticate.m in Sources */,
+				F19784F91806524800F7580A /* SQRLCamera.m in Sources */,
+				F19784FA1806524800F7580A /* SQRLMotion.m in Sources */,
+				F19784FB1806524800F7580A /* SQRLSecretKey.m in Sources */,
+				F197853618076E7F00F7580A /* NSData+Hash.m in Sources */,
+				F19784FC1806524800F7580A /* SQRLAuthentication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,7 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F19784F118064EA800F7580A /* SQRLAuthenticationCategoryTests.m in Sources */,
+				F19784FD1806525100F7580A /* SQRLAuthenticationCategoryTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,9 +372,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_MASTER_OBJECT_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				KEEP_PRIVATE_EXTERNS = NO;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRELINK_LIBS = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -397,8 +411,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_MASTER_OBJECT_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				OTHER_LDFLAGS = "-all_load";
+				KEEP_PRIVATE_EXTERNS = NO;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRELINK_LIBS = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

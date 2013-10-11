@@ -16,7 +16,7 @@
 {
 	dispatch_queue_t queue = dispatch_queue_create("com.tomsiphoneapps.sqrlauthentication.pbkdf2", NULL);
 	dispatch_async(queue, ^{
-#warning Apple's crypto library only supports the SHA family of hashes. This is here for developement purposes, but need to be re-implemented
+#warning Apple's PBKDF2 crypto function only supports the SHA family of hashes. This is here for developement purposes, but need to be re-implemented
 		int outputLength = (512 / 8);
 		CCPBKDFAlgorithm algorithm = kCCHmacAlgSHA512;
 		// From SO post http://stackoverflow.com/questions/8569555/pbkdf2-using-commoncrypto-on-ios

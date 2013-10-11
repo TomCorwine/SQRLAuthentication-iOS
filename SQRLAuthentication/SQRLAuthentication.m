@@ -174,16 +174,30 @@ typedef enum {
 - (void)camera:(SQRLCamera *)cameraHandler didCaptureQRCode:(NSString *)string
 {
 	self.capturedURL = [NSURL URLWithString:string];
-	if (SQRLAuthenticationCameraModeQRCode == self.mode && self.capturedURL)
+	if (SQRLAuthenticationCameraModeQRCode == self.mode)
 	{
-		[self.camera stop];
+		if (self.capturedURL) //TODO: check if this is a SQRL url
+		{
+			[self.camera stop];
 
-		if (self.qrScanCompletionBlock)
-			self.qrScanCompletionBlock(self.capturedURL.host, nil);
-		self.qrScanCompletionBlock = nil;
+			if (self.qrScanCompletionBlock)
+				self.qrScanCompletionBlock(self.capturedURL.host, nil);
+			self.qrScanCompletionBlock = nil;
 
-		if ([self.delegate respondsToSelector:@selector(sqrlAuthentication:qrCodeWasScannedForDomain:error:)])
-			[self.delegate sqrlAuthentication:self qrCodeWasScannedForDomain:self.capturedURL.host error:nil];
+			if ([self.delegate respondsToSelector:@selector(sqrlAuthentication:qrCodeWasScannedForDomain:error:)])
+				[self.delegate sqrlAuthentication:self qrCodeWasScannedForDomain:self.capturedURL.host error:nil];
+		}
+		else
+		{
+			NSError *error = [NSError errorWithDomain:@"" code:9 userInfo:@{@"":@""}];
+
+			if (self.qrScanCompletionBlock)
+				self.qrScanCompletionBlock(nil, error);
+			self.qrScanCompletionBlock = nil;
+
+			if ([self.delegate respondsToSelector:@selector(sqrlAuthentication:qrCodeWasScannedForDomain:error:)])
+				[self.delegate sqrlAuthentication:self qrCodeWasScannedForDomain:nil error:error];
+		}
 	}
 }
 

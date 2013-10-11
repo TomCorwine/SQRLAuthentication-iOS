@@ -67,17 +67,13 @@
 		data = [data dataXORdWithData:newData];
 	}
 
-	NSString *hash = data.sha256String;
-	[self.mutableString appendString:hash];
+	[self.mutableString appendString:data.sha256String];
 
 	if (self.elapsedSecondsOfCollectingData > kNumberOfKeyGeneratingSecondsRequired) // We're done
 	{
-		NSData *finalData = [self.mutableString dataUsingEncoding:NSUTF8StringEncoding];
-		NSString *hashedString = finalData.sha256String;
-		finalData = [hashedString dataUsingEncoding:NSUTF8StringEncoding];
-
-		NSData *randomData = [NSData randomDataWithLength:finalData.length]; // Add random data from system
-		finalData = [finalData dataXORdWithData:randomData];
+		data = [self.mutableString.sha256String dataUsingEncoding:NSUTF8StringEncoding];
+		NSData *randomData = [NSData randomDataWithLength:data.length]; // Add random data from system
+		data = [data dataXORdWithData:randomData];
 		self.secretKey = data;
 
 		self.mutableString = nil;
@@ -138,10 +134,10 @@
 	NSTimeInterval timeInterval = [NSDate date].timeIntervalSince1970;
 	NSUInteger dataLength = self.mutableString.length;
 
-	// generationTimer fires off before mutableData is allocated. If mutableData is nil, then we're just starting off
-	// and the old* variables should be reset. This isn't a big deal the first time we try to generate
-	// a user's secret key, but this may not be the first time. The user may have canceled and is
-	// starting over.
+	// generationTimer fires off before mutableString is allocated. If mutableString is nil,
+	// then we're just starting off and the old* variables should be reset. This isn't a big deal
+	// the first time we try to generate a user's secret key, but this may not be the first time.
+	// The user may have canceled and is starting over.
 	if (nil == self.mutableString)
 	{
 		oldTimeInterval = timeInterval;
