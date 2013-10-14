@@ -6,41 +6,31 @@
 
 #import "NSData+Scrypt.h"
 
-#import <CommonCrypto/CommonKeyDerivation.h>
+#import "scryptenc.h"
 
 @implementation NSData (Scrypt)
 
-- (void)scryptPBKDF2WithKey:(NSData *)key duration:(NSTimeInterval)seconds completionBlock:(NSDataScryptCompletionBlock)completionBlock
+- (void)scryptPBKDWithPassword:(NSString *)password duration:(NSTimeInterval)seconds completionBlock:(NSDataScryptCompletionBlock)completionBlock
 {
-	dispatch_queue_t queue = dispatch_queue_create("com.tomsiphoneapps.sqrlauthentication.pbkdf2", NULL);
+	dispatch_queue_t queue = dispatch_queue_create("com.tomsiphoneapps.sqrlauthentication.scrypt", NULL);
 	dispatch_async(queue, ^{
-#warning Apple's PBKDF2 crypto function only supports the SHA family of hashes. This is here for developement purposes, but need to be re-implemented
-		int outputLength = (512 / 8);
-		CCPBKDFAlgorithm algorithm = kCCHmacAlgSHA512;
-		// From SO post http://stackoverflow.com/questions/8569555/pbkdf2-using-commoncrypto-on-ios
-		// Calculate the number of rounds we need on this hardware to achive our desired time to hash
-		int rounds = CCCalibratePBKDF(kCCPBKDF2, // this is the only valid option
-									  self.length, // length of input
-									  key.length, // length of salt
-									  algorithm, // algorithm to use
-									  outputLength, // output length in bytes
-									  (seconds * 1000)); // time to hash in ms
+		/**
+		 * scryptenc_buf(inbuf, inbuflen, outbuf, passwd, passwdlen,
+		 *     maxmem, maxmemfrac, maxtime):
+		 * Encrypt inbuflen bytes from inbuf, writing the resulting inbuflen + 128
+		 * bytes to outbuf.
+		 */
+		const uint8_t *in_buffer = (uint8_t *)self.bytes;
+		uint8_t out_buffer[sizeof(in_buffer) + 128];
+		int N = 0;
+		double r = 8;
+		double p = 0;
+		scryptenc_buf(in_buffer, sizeof(in_buffer), out_buffer, (uint8_t *)password.UTF8String, password.length, N, r, p);
 
-		unsigned char result[32];
-		CCKeyDerivationPBKDF(kCCPBKDF2,
-							 self.bytes,
-							 self.length,
-							 key.bytes,
-							 key.length,
-							 algorithm,
-							 rounds,
-							 result,
-							 outputLength);
-		NSData *data = [NSData dataWithBytes:result length:outputLength];
-
+		NSData *data = [NSData dataWithBytes:out_buffer length:sizeof(out_buffer)];
 		dispatch_async(dispatch_get_main_queue(), ^{
 			if (completionBlock)
-				completionBlock(data, rounds);
+				completionBlock(data);
 		});
 	});
 }

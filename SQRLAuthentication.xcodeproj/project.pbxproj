@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F1178D60180BB9530077B236 /* crypto_aesctr.c in Sources */ = {isa = PBXBuildFile; fileRef = F1178D4A180BB9530077B236 /* crypto_aesctr.c */; };
+		F1178D61180BB9530077B236 /* crypto_scrypt-nosse.c in Sources */ = {isa = PBXBuildFile; fileRef = F1178D4C180BB9530077B236 /* crypto_scrypt-nosse.c */; };
+		F1178D62180BB9530077B236 /* crypto_scrypt-ref.c in Sources */ = {isa = PBXBuildFile; fileRef = F1178D4D180BB9530077B236 /* crypto_scrypt-ref.c */; };
+		F1178D63180BB9530077B236 /* crypto_scrypt-sse.c in Sources */ = {isa = PBXBuildFile; fileRef = F1178D4E180BB9530077B236 /* crypto_scrypt-sse.c */; };
+		F1178D64180BB9530077B236 /* sha256.c in Sources */ = {isa = PBXBuildFile; fileRef = F1178D50180BB9530077B236 /* sha256.c */; };
+		F1178D65180BB9530077B236 /* scryptenc.c in Sources */ = {isa = PBXBuildFile; fileRef = F1178D54180BB9530077B236 /* scryptenc.c */; };
+		F1178D66180BB9530077B236 /* scryptenc_cpuperf.c in Sources */ = {isa = PBXBuildFile; fileRef = F1178D56180BB9530077B236 /* scryptenc_cpuperf.c */; };
+		F1178D67180BB9530077B236 /* memlimit.c in Sources */ = {isa = PBXBuildFile; fileRef = F1178D59180BB9530077B236 /* memlimit.c */; };
+		F1178D68180BB9530077B236 /* readpass.c in Sources */ = {isa = PBXBuildFile; fileRef = F1178D5B180BB9530077B236 /* readpass.c */; };
+		F1178D69180BB9530077B236 /* warn.c in Sources */ = {isa = PBXBuildFile; fileRef = F1178D5E180BB9530077B236 /* warn.c */; };
 		F19784F018064E4400F7580A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A340FB1803457C0013CB31 /* XCTest.framework */; };
 		F19784F21806524800F7580A /* NSData+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED4C18064BF300706858 /* NSData+Random.m */; };
 		F19784F31806524800F7580A /* NSData+Scrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED4E18064BF300706858 /* NSData+Scrypt.m */; };
@@ -51,6 +61,28 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F1178D4A180BB9530077B236 /* crypto_aesctr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = crypto_aesctr.c; sourceTree = "<group>"; };
+		F1178D4B180BB9530077B236 /* crypto_aesctr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypto_aesctr.h; sourceTree = "<group>"; };
+		F1178D4C180BB9530077B236 /* crypto_scrypt-nosse.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "crypto_scrypt-nosse.c"; sourceTree = "<group>"; };
+		F1178D4D180BB9530077B236 /* crypto_scrypt-ref.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "crypto_scrypt-ref.c"; sourceTree = "<group>"; };
+		F1178D4E180BB9530077B236 /* crypto_scrypt-sse.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "crypto_scrypt-sse.c"; sourceTree = "<group>"; };
+		F1178D4F180BB9530077B236 /* crypto_scrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypto_scrypt.h; sourceTree = "<group>"; };
+		F1178D50180BB9530077B236 /* sha256.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha256.c; sourceTree = "<group>"; };
+		F1178D51180BB9530077B236 /* sha256.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha256.h; sourceTree = "<group>"; };
+		F1178D52180BB9530077B236 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		F1178D54180BB9530077B236 /* scryptenc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = scryptenc.c; sourceTree = "<group>"; };
+		F1178D55180BB9530077B236 /* scryptenc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scryptenc.h; sourceTree = "<group>"; };
+		F1178D56180BB9530077B236 /* scryptenc_cpuperf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = scryptenc_cpuperf.c; sourceTree = "<group>"; };
+		F1178D57180BB9530077B236 /* scryptenc_cpuperf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scryptenc_cpuperf.h; sourceTree = "<group>"; };
+		F1178D59180BB9530077B236 /* memlimit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = memlimit.c; sourceTree = "<group>"; };
+		F1178D5A180BB9530077B236 /* memlimit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = memlimit.h; sourceTree = "<group>"; };
+		F1178D5B180BB9530077B236 /* readpass.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = readpass.c; sourceTree = "<group>"; };
+		F1178D5C180BB9530077B236 /* readpass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = readpass.h; sourceTree = "<group>"; };
+		F1178D5D180BB9530077B236 /* sysendian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sysendian.h; sourceTree = "<group>"; };
+		F1178D5E180BB9530077B236 /* warn.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = warn.c; sourceTree = "<group>"; };
+		F1178D5F180BB9530077B236 /* warn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = warn.h; sourceTree = "<group>"; };
+		F1178D6A180BC1760077B236 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		F1178D6B180BC1760077B236 /* scrypt_platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scrypt_platform.h; sourceTree = "<group>"; };
 		F154ED4B18064BF300706858 /* NSData+Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Random.h"; sourceTree = "<group>"; };
 		F154ED4C18064BF300706858 /* NSData+Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Random.m"; sourceTree = "<group>"; };
 		F154ED4D18064BF300706858 /* NSData+Scrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Scrypt.h"; sourceTree = "<group>"; };
@@ -111,6 +143,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F1178D48180BB9530077B236 /* Scrypt */ = {
+			isa = PBXGroup;
+			children = (
+				F1178D6A180BC1760077B236 /* config.h */,
+				F1178D6B180BC1760077B236 /* scrypt_platform.h */,
+				F1178D49180BB9530077B236 /* crypto */,
+				F1178D52180BB9530077B236 /* README */,
+				F1178D53180BB9530077B236 /* scryptenc */,
+				F1178D58180BB9530077B236 /* util */,
+			);
+			path = Scrypt;
+			sourceTree = "<group>";
+		};
+		F1178D49180BB9530077B236 /* crypto */ = {
+			isa = PBXGroup;
+			children = (
+				F1178D4A180BB9530077B236 /* crypto_aesctr.c */,
+				F1178D4B180BB9530077B236 /* crypto_aesctr.h */,
+				F1178D4C180BB9530077B236 /* crypto_scrypt-nosse.c */,
+				F1178D4D180BB9530077B236 /* crypto_scrypt-ref.c */,
+				F1178D4E180BB9530077B236 /* crypto_scrypt-sse.c */,
+				F1178D4F180BB9530077B236 /* crypto_scrypt.h */,
+				F1178D50180BB9530077B236 /* sha256.c */,
+				F1178D51180BB9530077B236 /* sha256.h */,
+			);
+			path = crypto;
+			sourceTree = "<group>";
+		};
+		F1178D53180BB9530077B236 /* scryptenc */ = {
+			isa = PBXGroup;
+			children = (
+				F1178D54180BB9530077B236 /* scryptenc.c */,
+				F1178D55180BB9530077B236 /* scryptenc.h */,
+				F1178D56180BB9530077B236 /* scryptenc_cpuperf.c */,
+				F1178D57180BB9530077B236 /* scryptenc_cpuperf.h */,
+			);
+			path = scryptenc;
+			sourceTree = "<group>";
+		};
+		F1178D58180BB9530077B236 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				F1178D59180BB9530077B236 /* memlimit.c */,
+				F1178D5A180BB9530077B236 /* memlimit.h */,
+				F1178D5B180BB9530077B236 /* readpass.c */,
+				F1178D5C180BB9530077B236 /* readpass.h */,
+				F1178D5D180BB9530077B236 /* sysendian.h */,
+				F1178D5E180BB9530077B236 /* warn.c */,
+				F1178D5F180BB9530077B236 /* warn.h */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
 		F154ED4A18064BF300706858 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +222,7 @@
 		F154ED5318064BF300706858 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				F1178D48180BB9530077B236 /* Scrypt */,
 				F154ED5418064BF300706858 /* PDKeychainBindingsController */,
 			);
 			name = Libraries;
@@ -318,8 +404,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1178D61180BB9530077B236 /* crypto_scrypt-nosse.c in Sources */,
 				F19784F21806524800F7580A /* NSData+Random.m in Sources */,
 				F19784F31806524800F7580A /* NSData+Scrypt.m in Sources */,
+				F1178D63180BB9530077B236 /* crypto_scrypt-sse.c in Sources */,
+				F1178D60180BB9530077B236 /* crypto_aesctr.c in Sources */,
+				F1178D67180BB9530077B236 /* memlimit.c in Sources */,
+				F1178D64180BB9530077B236 /* sha256.c in Sources */,
 				F197853A1807BE8B00F7580A /* NSData+Convert.m in Sources */,
 				F19784F41806524800F7580A /* NSData+XOR.m in Sources */,
 				F19784F51806524800F7580A /* NSString+Hash.m in Sources */,
@@ -328,10 +419,15 @@
 				F19784F81806524800F7580A /* SQRLAuthenticate.m in Sources */,
 				F19784F91806524800F7580A /* SQRLCamera.m in Sources */,
 				F19784FA1806524800F7580A /* SQRLMotion.m in Sources */,
+				F1178D69180BB9530077B236 /* warn.c in Sources */,
 				F19784FB1806524800F7580A /* SQRLSecretKey.m in Sources */,
+				F1178D62180BB9530077B236 /* crypto_scrypt-ref.c in Sources */,
 				F197853D1807BF2700F7580A /* NSString+Convert.m in Sources */,
 				F197853618076E7F00F7580A /* NSData+Hash.m in Sources */,
 				F19784FC1806524800F7580A /* SQRLAuthentication.m in Sources */,
+				F1178D66180BB9530077B236 /* scryptenc_cpuperf.c in Sources */,
+				F1178D68180BB9530077B236 /* readpass.c in Sources */,
+				F1178D65180BB9530077B236 /* scryptenc.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

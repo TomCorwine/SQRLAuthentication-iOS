@@ -120,7 +120,7 @@
 - (void)secretKeyWithPassword:(NSString *)password completionBlock:(SQRLSecretKeyCompletionBlock)completionBlock
 {
 	NSString *secretKeyString = [[PDKeychainBindings sharedKeychainBindings] objectForKey:kSecretKeyStorageKey];;
-	[secretKeyString.data scryptPBKDF2WithKey:password.data duration:0.5 completionBlock:^(NSData *data, int rounds) {
+	[secretKeyString.data scryptPBKDWithPassword:password duration:0.5 completionBlock:^(NSData *data) {
 		if (completionBlock)
 			completionBlock(data);
 	}];

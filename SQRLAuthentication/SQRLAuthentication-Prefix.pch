@@ -6,14 +6,14 @@
 
 #ifdef __OBJC__
 	#import <Foundation/Foundation.h>
-#endif
 
-#ifndef __IPHONE_7_0
-	#error This project uses features only available in iOS SDK 7.0 and later.
-#endif
+	#ifndef __IPHONE_7_0
+		#error This project uses features only available in iOS SDK 7.0 and later.
+	#endif
 
-#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
-	#error This project requires devices to be running iOS 7.0 or later
+	#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
+		#error This project requires devices to be running iOS 7.0 or later
+	#endif
 #endif
 
 #ifdef DEBUG

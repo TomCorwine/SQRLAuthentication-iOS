@@ -6,10 +6,10 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^NSDataScryptCompletionBlock)(NSData *data, int rounds);
+typedef void (^NSDataScryptCompletionBlock)(NSData *data);
 
 @interface NSData (Scrypt)
 
-- (void)scryptPBKDF2WithKey:(NSData *)key duration:(NSTimeInterval)seconds completionBlock:(NSDataScryptCompletionBlock)completionBlock;
+- (void)scryptPBKDWithPassword:(NSString *)password duration:(NSTimeInterval)seconds completionBlock:(NSDataScryptCompletionBlock)completionBlock;
 
 @end
