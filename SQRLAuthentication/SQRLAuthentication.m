@@ -1,6 +1,6 @@
 //
-//  SQLAuthentication.m
-//  SQLAuthentication
+//  SQRLAuthentication.m
+//  SQRLAuthentication
 //
 //  Created by Tom Corwine on 10/7/13.
 //

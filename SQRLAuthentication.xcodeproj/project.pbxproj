@@ -17,6 +17,7 @@
 		F1178D67180BB9530077B236 /* memlimit.c in Sources */ = {isa = PBXBuildFile; fileRef = F1178D59180BB9530077B236 /* memlimit.c */; };
 		F1178D68180BB9530077B236 /* readpass.c in Sources */ = {isa = PBXBuildFile; fileRef = F1178D5B180BB9530077B236 /* readpass.c */; };
 		F1178D69180BB9530077B236 /* warn.c in Sources */ = {isa = PBXBuildFile; fileRef = F1178D5E180BB9530077B236 /* warn.c */; };
+		F1179A47180C7ABC0077B236 /* aes.c in Sources */ = {isa = PBXBuildFile; fileRef = F1179A46180C7ABC0077B236 /* aes.c */; };
 		F19784F018064E4400F7580A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A340FB1803457C0013CB31 /* XCTest.framework */; };
 		F19784F21806524800F7580A /* NSData+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED4C18064BF300706858 /* NSData+Random.m */; };
 		F19784F31806524800F7580A /* NSData+Scrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = F154ED4E18064BF300706858 /* NSData+Scrypt.m */; };
@@ -83,6 +84,8 @@
 		F1178D5F180BB9530077B236 /* warn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = warn.h; sourceTree = "<group>"; };
 		F1178D6A180BC1760077B236 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		F1178D6B180BC1760077B236 /* scrypt_platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scrypt_platform.h; sourceTree = "<group>"; };
+		F1179A46180C7ABC0077B236 /* aes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aes.c; sourceTree = "<group>"; };
+		F1179A49180C7AF30077B236 /* aes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
 		F154ED4B18064BF300706858 /* NSData+Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Random.h"; sourceTree = "<group>"; };
 		F154ED4C18064BF300706858 /* NSData+Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Random.m"; sourceTree = "<group>"; };
 		F154ED4D18064BF300706858 /* NSData+Scrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Scrypt.h"; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 				F1178D52180BB9530077B236 /* README */,
 				F1178D53180BB9530077B236 /* scryptenc */,
 				F1178D58180BB9530077B236 /* util */,
+				F1179A49180C7AF30077B236 /* aes.h */,
+				F1179A46180C7ABC0077B236 /* aes.c */,
 			);
 			path = Scrypt;
 			sourceTree = "<group>";
@@ -422,6 +427,7 @@
 				F1178D69180BB9530077B236 /* warn.c in Sources */,
 				F19784FB1806524800F7580A /* SQRLSecretKey.m in Sources */,
 				F1178D62180BB9530077B236 /* crypto_scrypt-ref.c in Sources */,
+				F1179A47180C7ABC0077B236 /* aes.c in Sources */,
 				F197853D1807BF2700F7580A /* NSString+Convert.m in Sources */,
 				F197853618076E7F00F7580A /* NSData+Hash.m in Sources */,
 				F19784FC1806524800F7580A /* SQRLAuthentication.m in Sources */,
